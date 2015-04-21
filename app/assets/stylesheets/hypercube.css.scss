@@ -1,0 +1,98 @@
+// Place all the styles related to the hypercube controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-variant: normal;
+  padding-top: 20px;
+  background:url('/assets/squairy_light.png');
+
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 100px;
+    border-top: 1px solid #eee;
+    background: #04567c;
+    color: #fff;
+
+    #footer-msg{
+      font-size: 24px;
+    }
+  }
+
+  .container{
+    .row{
+      .col-lg-12{
+        .masthead{
+          h3.text-muted{
+            a{
+              color: #18bde6 !important;
+            }
+          }
+        }
+        $size: 350px;
+        $background: #18bde6;
+        .scene {
+          //display: inline-block;
+          margin-top: 100px;
+          width: $size;
+          height: $size;
+          perspective: 600px;
+          float: none !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .cube {
+          position: relative;
+          width: inherit;
+          height: inherit;
+          transform-style: preserve-3d;
+          transition: transform 0.6s;
+          background: $background;
+          color: #333333;
+
+          .cube-face {
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            background: $background;
+            opacity: 1;
+            h2 {
+              font-size: 20px;
+              color: #fff;
+              font-weight: bold;
+            }
+            h2,p{
+              margin: 20px;
+            }
+          }
+
+          // faces
+          .cube-face-front {
+            transform: translate3d(0, 0, $size/2);
+          }  
+          .cube-face-back {
+            transform: rotateY(180deg) translate3d(0, 0, $size/2);
+          } 
+          .cube-face-left {
+            transform: rotateY(-90deg) translate3d(0, 0, $size/2);
+          } 
+          .cube-face-right {
+            transform: rotateY(90deg) translate3d(0, 0, $size/2);
+          } 
+          .cube-face-top {
+            transform: rotateX(90deg) translate3d(0, 0, $size/2);
+          } 
+          .cube-face-bottom {
+            transform: rotateX(-90deg) translate3d(0, 0, $size/2);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* You can either put your CSS here or link to an external file. */
