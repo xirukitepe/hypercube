@@ -1,13 +1,24 @@
-require './lib/engine'
-class Car < Engine
+class Car
   attr_reader :engine
 
-  def self.engine
-    @engine ||= Engine.new(4)
+  def initialize(engine = Engine.new(4))
+    @engine ||= engine
   end
 
-  def self.move
-    engine.accelerate
+  def move
+    @engine.accelerate
+  end
+end
+
+class Engine
+  attr_reader :cylinders
+
+  def initialize(cylinders)
+    @cylinders = cylinders
+  end
+
+  def accelerate
+
   end
 end
 

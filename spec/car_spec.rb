@@ -2,16 +2,15 @@ require 'rspec'
 require 'car'
 
 describe "Car" do
-  it "initializes and creates new Engine with 4 cylinders" do
+  it "checks if Engine with 4 cylinders is created" do
     expect(
-      Car.engine.cylinders
+      Car.new.engine.cylinders
     ).to eq(4)
   end
 
-  it "applies acceleration to the car" do
-    engine = Car.engine
+  it "checks if acceleration is possible" do
     expect(
-      Car.move
+      Car.new.move
     ).to eq(nil)
   end
 end
